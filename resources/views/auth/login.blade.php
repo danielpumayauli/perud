@@ -10,8 +10,8 @@
                 <div class="card card-signup">
                     <form class="form" method="post" action="{{ route('login') }}">
                         {{ csrf_field() }}
-                        <div class="header header-primary text-center">
-                            <h4>Iniciar Sesión</h4>
+                        <div class="header text-center" style="background-color: #46A760">
+                            <h4 style="color: white">Iniciar Sesión</h4>
                             <!-- <div class="social-line">
                                 <a href="#pablo" class="btn btn-simple btn-just-icon">
                                     <i class="fa fa-facebook-square"></i>
@@ -50,7 +50,8 @@
                             </div>
                         </div>
                         <div class="footer text-center">
-                            <button type="submit" class="btn btn-simple btn-primary btn-lg">Ingresar</button>
+                            <button type="submit" class="btn btn-simple btn-primary btn-lg" style="color: #46A760; border: 1px solid #46A760; border-radius: 5px ">Ingresar</button>
+                            <a href="{{url('/')}}" class="btn btn-simple btn-default btn-lg" style="border: 1px solid grey; border-radius: 5px ">Cancelar</a>
                         </div>
                         <!--<a href="{{route('password.request')}}" class="btn btn-link">For got your password?</a>-->
                     </form>
@@ -59,37 +60,37 @@
         </div>
     </div>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="http://www.creative-tim.com">
-                            Creative Tim
+                        <a href="">
+                            PERUD
                         </a>
                     </li>
                     <li>
-                        <a href="http://presentation.creative-tim.com">
-                           About Us
+                        <a href="">
+                           Nosotros
                         </a>
                     </li>
                     <li>
-                        <a href="http://blog.creative-tim.com">
+                        <a href="">
                            Blog
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.creative-tim.com/license">
-                            Licenses
+                        <a href="">
+                            Condiciones
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2016, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Creative Tim</a>
+                &copy; 2017, hecho por <i class="fa fa-heart heart"></i> by <a href="" target="_blank">AQUAVIP</a>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
 </div>
 @endsection

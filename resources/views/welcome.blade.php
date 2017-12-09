@@ -65,29 +65,30 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" style="background-color: #46A760">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Inicio</a>
+                        <a href="{{ url('/home') }}"> <span style="color: white">Inicio</span></a>
                     @else
-                        <a href="{{ route('login') }}">Acceder</a>
-                        <a href="{{ route('register') }}">Registro</a>
+                        <a href="{{ route('login') }}"><span style="color: white">Acceder</span></a>
+                        <a href="{{ route('register') }}"><span style="color: white">Registro</span></a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md" style="color: yellow; font-size: 5em">
                     AQUAVIP
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                    <span style="color: yellow; font-size: 2em">LA APP PARA SALVAR EL PLANETA</span>
+                    <!-- <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
                 </div>
             </div>
         </div>
