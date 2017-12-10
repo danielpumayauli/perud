@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/service/{id}/index', 'ServiceController@index'); // Dirige al listado
+Route::get('/service/{id}/{songId}/play', 'ServiceController@play'); // Reproduce la ducha

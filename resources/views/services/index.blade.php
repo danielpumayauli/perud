@@ -38,17 +38,17 @@
                 </thead>
                 <tbody>
 
-                    @foreach ($songPaths as $songPath)
+                    @foreach ($songs as $song)
                     <tr>
-                        <td class="text-center">{{$songPath->id}}</td>
-                        <td>{{$songPath->name}}</td>
-                        <td>{{$songPath->artist}}</td>
+                        <td class="text-center">{{$song->id}}</td>
+                        <td>{{$song->name}}</td>
+                        <td>{{$song->artist}}</td>
                         <td class="td-actions text-right">
-                            <!-- <audio src="{{ $songPath->path}}" controls><source src="" type="audio/mpeg" autoplay></audio> -->
+                            <!-- <audio src="{{ $song->path}}" controls><source src="" type="audio/mpeg" autoplay></audio> -->
                              <!-- Button trigger modal -->
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                              Launch demo modal
-                            </button>
+                            <a href="{{ url('/service/'.$id.'/'.$song->id.'/play') }}" class="btn btn-primary">
+                              ELEGIR
+                            </a>
                         
 
                             
