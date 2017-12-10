@@ -25,33 +25,17 @@
 
             @endif
             <div class="row">
+                @foreach ($categories as $category)
                 <div class="col-md-6 alert alert-success text-center">
-                    <a href="#dashboard" role="tab" data-toggle="tab">
+                    <a href="{{ url('/service/'.$category->id.'/index') }}">
                         <i class="material-icons">dashboard</i>
-                        DUCHA
+                        {{$category->name}}
                     </a>
                 </div>
-                <div class="col-md-6 alert alert-info text-center">
-                    <a href="#dashboard" role="tab" data-toggle="tab">
-                        <i class="material-icons">dashboard</i>
-                        JARDINERÍA
-                    </a>
-                </div>
+                
+                @endforeach
             </div>
-            <div class="row ">
-                <div class="col-md-6 alert alert-info text-center">
-                    <a href="#dashboard" role="tab" data-toggle="tab">
-                        <i class="material-icons">dashboard</i>
-                        LAVANDERÍA
-                    </a>
-                </div>
-                <div class="col-md-6 alert alert-success text-center">
-                    <a href="#dashboard" role="tab" data-toggle="tab">
-                        <i class="material-icons">dashboard</i>
-                        COCINA
-                    </a>
-                </div>
-            </div>
+            
 
             <!-- <ul class="nav nav-pills nav-pills-primary" role="tablist">
                 <li>
