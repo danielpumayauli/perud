@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="@yield('body-class')">
+<body class="@yield('body-class')" >
     <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">AQUAVIP</a>
+                <a class="navbar-brand" href="{{ url('/home') }}">AQUAVIP</a>
             </div>
 
             <div class="collapse navbar-collapse" id="navigation-example">
@@ -70,12 +70,13 @@
         </div>
     </nav>
 
+
     <div class="wrapper">
         @yield('content')
 
     </div>
 
-    
+
 
 
 </body>

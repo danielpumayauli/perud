@@ -23,7 +23,7 @@
 
             @endif
 
-            @if($id == 1)
+            @if($categoryId == 1)
             <h2 class="title  text-center">PREPARA TU DUCHA</h2>
             <h3 class="text-center" >ELIGE TU OPCIÓN FAVORITA</h3>
 
@@ -46,7 +46,7 @@
                         <td class="td-actions text-right">
                             <!-- <audio src="{{ $song->path}}" controls><source src="" type="audio/mpeg" autoplay></audio> -->
                              <!-- Button trigger modal -->
-                            <a href="{{ url('/service/'.$id.'/'.$song->id.'/play') }}" class="btn btn-primary">
+                            <a href="{{ url('/service/'.$categoryId.'/'.$song->id.'/play') }}" class="btn btn-primary">
                               ELEGIR
                             </a>
                         
@@ -95,7 +95,7 @@
 
             </div> -->
             @else
-            <div class="title m-b-md" style="color: yellow; font-size: 5em">
+            <div class="title m-b-md text-center" style="color: grey; font-size: 5em">
                 VUELVE PRONTO...
             </div>
             @endif

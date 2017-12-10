@@ -23,7 +23,6 @@
 
             @endif
 
-            @if($categoryId == 1)
             <h2 class="title  text-center" style="color: white">TU TIEMPO PARA BAÑARTE!</h2>
             
             <div class="text-center">
@@ -32,25 +31,17 @@
                 </div>
 
                 <img src="{{url('/img/spotify.png')}}" style="display: inline-block; padding-bottom: 10px" alt="">
-                <h3 class="text-center" style="color: white; display: inline-block;"> Reproduciendo: {{ $songSelected->name }}</h3>
-                <h4 class="text-center" style="color: white">Artista: {{ $songSelected->artist }}</h4>
-                <form method="post" action="/service/store">
-                    {{csrf_field()}}
-                    <input type="hidden" name="tempo" value="7">
-                    <input type="hidden" name="categoria" value="{{$categoryId}}">
-                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                    <button type="submit" class="btn btn-danger btn-lg" style="margin: 0 auto">Ya terminé!</button>
-                </form>
+                <h3 class="text-center" style="color: white; display: inline-block;"> RESULTADO: {{ $service->duration }} </h3>
+                <a href="{{ url('/home') }}" class="btn btn-success">Volver</a>
+                
                 
                 <hr>
             </div>
             
 
-            <!-- <span> El id de la categoria es {{$categoryId}}</span>
-            <span>La ruta de la cancion seleccionada es {{$songSelected->path}}</span> -->
             <div class="row">
                 <div class="col-md-12" style="background-color: #272822">
-                    <audio controls autoplay style="width: 100%"><source src="{{ $songSelected->path }}" type="audio/mpeg" ></audio>
+                    <span>texto</span>
                 </div>
             </div>
 
@@ -105,11 +96,6 @@
                 $('.water').css('height', $('body').width()*2);
 
             </script>
-            @else
-            <div class="title m-b-md text-center" style="color: yellow; font-size: 5em">
-                VUELVE PRONTO...
-            </div>
-            @endif
 
         </div>
 
