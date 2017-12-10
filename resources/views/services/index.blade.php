@@ -44,14 +44,26 @@
                         <td>{{$songPath->name}}</td>
                         <td>{{$songPath->artist}}</td>
                         <td class="td-actions text-right">
-                            <audio src="{{ $songPath->path}}" controls><source src="" type="audio/mpeg" autoplay></audio>
-                            <!-- <button class="btn btn-success">EMPEZAR!</button> http://mp3teca.com/-/2016/04/Daddy-Yankee-Shaky-Shaky-1.mp3%22%3E%20%3Csource%20src=%22http://mp3teca.com/-/2016/04/Daddy-Yankee-Shaky-Shaky-1.mp3-->
+                            <!-- <audio src="{{ $songPath->path}}" controls><source src="" type="audio/mpeg" autoplay></audio> -->
+                             <!-- Button trigger modal -->
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                              Launch demo modal
+                            </button>
+                        
+
                             
                         </td>
                     </tr>
                     @endforeach
+
                 </tbody>
             </table>
+
+
+
+
+
+            
 
             <!-- <div class="links">
                 
