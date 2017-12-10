@@ -1,93 +1,108 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('title', 'Dashboard')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('body-class', '')
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+@section('content')
+<div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
 
-            .full-height {
-                height: 100vh;
-            }
+</div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+<div class="main main-raised">
+    <div class="container">
 
-            .position-ref {
-                position: relative;
-            }
+        <div class="section">
+            
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+            @if(session('status'))
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height" style="background-color: #46A760">
-
-            <div class="content">
-                @if($id == 1)
-                <div class="title m-b-md" style="color: yellow; font-size: 5em">
-                    PREPARA TU DUCHA
-                </div>
-
-                <div class="links">
-                    <span style="color: yellow; font-size: 2em">ELIGE TU OPCIÓN FAVORITA</span>
-                    <!-- <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
-                </div>
-                @else
-                <div class="title m-b-md" style="color: yellow; font-size: 5em">
-                    VUELVE PRONTO...
-                </div>
-                @endif
-
+            <div class="alert alert-success">
+                {{session('status')}}
             </div>
+
+            @endif
+
+            @if($id == 1)
+            <h2 class="title  text-center">PREPARA TU DUCHA</h2>
+            <h3 class="text-center" >ELIGE TU OPCIÓN FAVORITA</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th>Nombre</th>
+                        <th>Artista</th>
+                        <th class="text-right">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ($songPaths as $songPath)
+                    <tr>
+                        <td class="text-center">{{$songPath->id}}</td>
+                        <td>{{$songPath->name}}</td>
+                        <td>{{$songPath->artist}}</td>
+                        <td class="td-actions text-right">
+                            <audio src="{{ $songPath->path}}" controls><source src="" type="audio/mpeg" autoplay></audio>
+                            <!-- <button class="btn btn-success">EMPEZAR!</button> http://mp3teca.com/-/2016/04/Daddy-Yankee-Shaky-Shaky-1.mp3%22%3E%20%3Csource%20src=%22http://mp3teca.com/-/2016/04/Daddy-Yankee-Shaky-Shaky-1.mp3-->
+                            
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <!-- <div class="links">
+                
+
+                <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                    <li>
+                        <a href="#dashboard" role="tab" data-toggle="tab">
+                            <i class="material-icons">dashboard</i>
+                            Carrito de compras
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#tasks" role="tab" data-toggle="tab">
+                            <i class="material-icons">list</i>
+                            Pedidos realizados
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="dashboard">
+                    item 1
+                    
+                </div>
+                <div id="tasks">
+                    item 2
+                    
+                </div>
+
+            </div> -->
+            @else
+            <div class="title m-b-md" style="color: yellow; font-size: 5em">
+                VUELVE PRONTO...
+            </div>
+            @endif
+
+
+
+
+
+
+
+            
+
+
         </div>
-    </body>
-</html>
+
+
+
+    </div>
+
+</div>
+
+@endsection

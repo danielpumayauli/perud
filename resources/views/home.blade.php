@@ -15,7 +15,8 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title  text-center">AQUAVIP</h2>
+            <h2 class="title  text-center" style="font-size: 4em">AQUAVIP</h2>
+            <h4 class="title  text-center" style="font-size: 2em">¿Qué reto deseas realizar?</h2>
 
             @if(session('status'))
 
